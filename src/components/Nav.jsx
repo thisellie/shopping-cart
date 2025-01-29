@@ -1,7 +1,9 @@
+import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
+import { ShoppingCart } from 'lucide-react'
 import './Nav.css'
 
-function Nav() {
+function Nav({ cart }) {
   return (
     <nav>
       <ul>
@@ -15,8 +17,14 @@ function Nav() {
           <Link to='/cart'>Cart</Link>
         </li>
       </ul>
+      <ShoppingCart />
+      <p>{cart}</p>
     </nav>
   )
 }
 
 export default Nav
+
+Nav.propTypes = {
+  cart: PropTypes.number.isRequired,
+}
