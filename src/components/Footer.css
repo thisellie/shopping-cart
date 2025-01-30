@@ -1,0 +1,9 @@
+footer {
+  border-top: 2px solid #010101;
+}
+
+footer p {
+  margin: 0;
+  padding: 1rem 0;
+  text-align: center;
+}
