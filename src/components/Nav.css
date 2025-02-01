@@ -1,3 +1,81 @@
 nav {
-  border-bottom: 3px solid #010101;
+  padding: 1rem 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: var(--border-size);
+}
+
+nav #menu {
+  display: none;
+}
+
+nav button {
+  margin: 0;
+  padding: 0;
+  border: none;
+  width: min-content;
+}
+
+nav h1 {
+  grid-area: 1/2/2/3;
+  text-align: center;
+  font-family: 'Felipa', serif;
+  margin: 0;
+}
+
+nav a {
+  color: var(--black);
+  text-decoration: none;
+}
+
+nav div {
+  width: fit-content;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  justify-self: end;
+  gap: 1rem;
+}
+
+nav ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav div > a {
+  position: relative;
+}
+
+nav #cart-count {
+  position: absolute;
+  left: 50%;
+  top: -25%;
+  background-color: var(--primary);
+  color: var(--white);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav #cart-count p {
+  margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+  nav > ul,
+  nav > div {
+    display: none;
+  }
+
+  nav #menu {
+    display: block;
+  }
 }
