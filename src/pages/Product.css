@@ -1,0 +1,19 @@
+#product {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  object-fit: contain;
+}
+
+.product-details {
+  justify-self: baseline;
+  width: 70%;
+}

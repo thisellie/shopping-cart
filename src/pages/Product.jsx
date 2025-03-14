@@ -1,5 +1,17 @@
 import { useOutletContext, useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
+import './Product.css'
+import { FaStar, FaStarHalfAlt, FaRegStar } from 'react-icons/fa'
+import Loading from '../components/Loading'
+
+function getStars(rating) {
+  const stars = []
+  for (let i = 1; i <= 5; i++)
+    if (i <= rating) stars.push(<FaStar key={i} />)
+    else if (i - rating < 1) stars.push(<FaStarHalfAlt key={i} />)
+    else stars.push(<FaRegStar key={i} />)
+  return stars
+}
 
 export default function Product() {
   const { productId } = useParams()
@@ -18,19 +30,23 @@ export default function Product() {
   }, [productId])
 
   if (!product) {
-    return <p>Loading...</p>
+    return <Loading />
   }
 
   return (
-    <main>
-      <div className='product'>
-        <img className='image' src={product.image} alt={product.title} />
+    // TODO: Add loading skeleton
+    <main id='product'>
+      <img className='image' src={product.image} alt={product.title} />
+      <div className='product-details'>
         <h1 className='title'>{product.title}</h1>
-        <h2 className='price'>{product.price}</h2>
+        <p className='rate'>{getStars(product.rating.rate)}</p>
+        <h2 className='price'>${product.price}</h2>
         <p className='description'>{product.description}</p>
-        <p className='category'>{product.category}</p>
-        <p className='rate'>{product.rating.rate}</p>
-        <p className='count'>{product.rating.count}</p>
+        {/* <p className='category'>{product.category}</p> */}
+        <p className='count'>
+          <b>Quantity: </b>
+          {product.rating.count}
+        </p>
         <button onClick={() => addToCart(product)}>Add To Cart</button>
       </div>
     </main>
