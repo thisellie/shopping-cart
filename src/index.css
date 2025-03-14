@@ -1,3 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Felipa&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --white: #f5f5f5;
+  --black: #010101;
+  --primary: #92817a;
+  --border-size: 1px solid var(--black);
+
+  font-family: 'EB Garamond', serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+html,
+body {
+  height: 100%;
+}
+
 body {
   margin: 0;
+  background-color: var(--white);
+}
+
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  color: var(--black);
+}
+
+button {
+  background-color: var(--primary);
+  border: none;
+  border-radius: 25px;
+  padding: 0.5rem 1rem;
+  font-family: 'EB Garamond', serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }

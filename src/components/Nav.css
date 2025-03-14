@@ -1,3 +1,8 @@
+#menu {
+  position: absolute;
+  display: none;
+}
+
 nav {
   padding: 1rem 2rem;
   display: grid;
@@ -7,7 +12,7 @@ nav {
   border-bottom: var(--border-size);
 }
 
-nav #menu {
+nav #menu-icon {
   display: none;
 }
 
@@ -75,7 +80,12 @@ nav #cart-count p {
     display: none;
   }
 
-  nav #menu {
+  #menu {
+    height: 100%;
+    padding: 1rem;
+  }
+
+  nav #menu-icon {
     display: block;
   }
 }

@@ -1,9 +1,14 @@
 footer {
-  border-top: 2px solid #010101;
+  border-top: var(--border-size);
 }
 
 footer p {
   margin: 0;
   padding: 1rem 0;
   text-align: center;
+}
+
+footer p a {
+  color: var(--black);
+  font-style: italic;
 }
