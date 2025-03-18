@@ -1,0 +1,5 @@
+.container {
+  border: var(--border-size);
+  height: 150px;
+  margin-bottom: 1rem;
+}
