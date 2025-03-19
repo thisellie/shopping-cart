@@ -17,3 +17,45 @@
   justify-self: baseline;
   width: 70%;
 }
+
+.quantity {
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.quantity-button {
+  height: inherit;
+  background-color: unset;
+  border: 1px solid var(--black);
+  border-radius: unset;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.quantity-input {
+  height: inherit;
+  width: 3rem;
+  padding: 0;
+  text-align: center;
+  border: 1px solid var(--black);
+  border-left: none;
+  border-right: none;
+  border-radius: unset;
+  box-sizing: border-box;
+  appearance: textfield;
+}
+
+.add-to-cart {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+}
+
+.add-to-cart:hover {
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+}
