@@ -17,7 +17,7 @@
 }
 
 .card .title {
-  margin: 0;
+  margin: 0 0 0.5rem 0;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
@@ -29,16 +29,6 @@
 .card .price {
   margin: 0;
 }
-
-/* .card .description {
-  margin: 0;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  line-clamp: 3;
-  overflow: hidden;
-  text-overflow: ellipsis;
-} */
 
 .card .category {
   margin: 0;

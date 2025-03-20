@@ -2,6 +2,7 @@ import './Card.css'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import { FaStar, FaStarHalfAlt, FaRegStar } from 'react-icons/fa'
+import { useState } from 'react'
 
 function getStars(rating) {
   const stars = []
@@ -13,11 +14,19 @@ function getStars(rating) {
 }
 
 function Card({ product }) {
+  const [imageLoaded, setImageLoaded] = useState(false)
+
   return (
     <Link to={`/shop/${product.id}`} className='card'>
-      <img className='image' src={product.image} alt={product.title} />
+      {!imageLoaded && <div className='image-skeleton'></div>}
+      <img
+        className={`image ${imageLoaded ? 'loaded' : 'hidden'}`}
+        src={product.image}
+        alt={product.title}
+        onLoad={() => setImageLoaded(true)}
+      />
       <h3 className='title'>{product.title}</h3>
-      <h4 className='price'>${product.price}</h4>
+      <p className='price'>${product.price}</p>
       <div className='rate'>{getStars(product.rating.rate)}</div>
     </Link>
   )
