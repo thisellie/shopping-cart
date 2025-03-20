@@ -19,10 +19,10 @@ function Nav({ cart }) {
         </button>
         <ul className="desktop-menu">
           <Link to="/">
-            <li>Featured</li>
+            <li>Home</li>
           </Link>
           <Link to="/shop">
-            <li>Browse</li>
+            <li>Shop</li>
           </Link>
         </ul>
         <h1>
@@ -44,10 +44,10 @@ function Nav({ cart }) {
         <div id="menu" className="mobile-menu">
           <ul>
             <Link to="/" onClick={toggleMenu}>
-              <li>Featured</li>
+              <li>Home</li>
             </Link>
             <Link to="/shop" onClick={toggleMenu}>
-              <li>Browse</li>
+              <li>Shop</li>
             </Link>
             <hr />
             <Link to="/cart" onClick={toggleMenu}>

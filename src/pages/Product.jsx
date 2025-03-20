@@ -1,7 +1,7 @@
 import './Product.css'
 import { useState, useEffect } from 'react'
 import { useOutletContext, useParams } from 'react-router-dom'
-import { FaStar, FaStarHalfAlt, FaRegStar } from 'react-icons/fa'
+import { FaStar, FaStarHalfAlt, FaRegStar, FaPlus, FaMinus } from 'react-icons/fa'
 import Loading from '../components/Loading'
 
 function getStars(rating) {
@@ -40,7 +40,6 @@ export default function Product() {
   }
 
   return (
-    // TODO: Add loading skeleton
     <main id="product">
       <img className="image" src={product.image} alt={product.title} />
       <div className="product-details">
@@ -49,17 +48,15 @@ export default function Product() {
         <h2 className="price">${product.price}</h2>
         <p className="description">{product.description}</p>
         <p className="quantity">
-          <span><b style={{ marginRight: '1rem' }}>Quantity</b></span>
+          <span>
+            <b style={{ marginRight: '1rem' }}>Quantity</b>
+          </span>
           <button className="quantity-button" onClick={() => setQuantity(quantity - 1)}>
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-              <path d="M3 8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 8z" />
-            </svg>
+            <FaMinus />
           </button>
           <input className="quantity-input" type="number" value={quantity} onChange={e => setQuantity(Number(e.target.value))} />
           <button className="quantity-button" onClick={() => setQuantity(quantity + 1)}>
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-              <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
-            </svg>
+            <FaPlus />
           </button>
         </p>
         <button className="add-to-cart" onClick={() => addToCart(product)}>
