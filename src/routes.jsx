@@ -12,10 +12,11 @@ const routes = [
     errorElement: <Error />,
     children: [
       {
-        index: true,
+        path: '/',
         element: <Home />,
       },
       {
+        index: true,
         path: 'shop',
         element: <Shop />,
       },
